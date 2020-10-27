@@ -59,10 +59,25 @@
   ?>
   
    <script type="text/javascript">
-    function MostrarProductos(){
-        alert( "<?php echo $saludo; ?>" );
-    }
-       
+     function MostrarProductos(){
+        $value = "Mostrar Productos";
+        $msg = '<div class="user-inbox inbox"><div class="msg-header"><p>'+ $value +'</p></div></div>';
+        $(".form").append($msg);
+        $("#data").val('');  
+         
+        // Codigo AJAX
+                $.ajax({
+                    url: 'PHP/conexion.php',
+                    type: 'POST',
+                    data: 'text='+$value,
+                    success: function(result){
+                        $replay = '<div class="bot-inbox inbox"><div class="icon"><img src="imagenes/chat.png" class="imgRedonda2"></div><div class="msg-header"><p>'+ result +'</p></div></div>';
+                        $(".form").append($replay);
+                        //Esto es para que la barra baje al ultimo chat.
+                        $(".form").scrollTop($(".form")[0].scrollHeight);
+                    }
+                }); 
+     }
     function EstatusCompra(){
         alert("EstatusCompra");
     }

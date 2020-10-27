@@ -1,15 +1,24 @@
 <?php
 
-$conn =mysqli_connect("hstng01.ci4cd.net:3306","lpichardo","HmAmw4sDw7Mz7hF5","lpichardo") or die("Database Error");
+// "hstng01.ci4cd.net:3306"
+$username = "lpichardo";
+$password = "HmAmw4sDw7Mz7hF5";
+$database = "lpichardo";
+
+
 /*
-$conn = mysqli_connect("ramptors.net/mysql:3306","chatsell","ChatSell*#969798","chatsell") or die("Database Error");
+mysql
+$username = "chatsell";
+$password = "ChatSell*#969798";
+$database = "chatsell";
 */
+
+$conn = mysqli_connect("hstng01.ci4cd.net:3306",$username,$password,$database);
 
 // Recibir el mensaje del cliente.
 $getMesg = mysqli_real_escape_string($conn, $_POST['text']);
 
 // variables globales
-
 
 switch ($getMesg) {
   case "Mostrar Productos":
@@ -104,7 +113,7 @@ if(mysqli_num_rows($resultados) > 0) {
 ?>
   <img src=
 <?php
-    echo '"'.$replay.'" width="100" height="100">'."<br />" ;
+    echo '"'.$replay.'" width="150" height="100">'."<br />" ;
 //Para Reservar 
      echo "Adquierelo pronto<br>";
     ?> 
