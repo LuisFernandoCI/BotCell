@@ -1,9 +1,9 @@
 <?php
-/* Conectar a la base de datos
-$conn =mysqli_connect("hstng01.ci4cd.net:3306","lpichardo","HmAmw4sDw7Mz7hF5","lpichardo") or die("Database Error");
-*/
 
+$conn =mysqli_connect("hstng01.ci4cd.net:3306","lpichardo","HmAmw4sDw7Mz7hF5","lpichardo") or die("Database Error");
+/*
 $conn = mysqli_connect("ramptors.net/mysql:3306","chatsell","ChatSell*#969798","chatsell") or die("Database Error");
+*/
 
 // Recibir el mensaje del cliente.
 $getMesg = mysqli_real_escape_string($conn, $_POST['text']);
