@@ -9,13 +9,10 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script>
-            $(document).ready(function(){
-                $('#Boton').click(function(){
-                $("#botones").load("botones.php");
-                                             });
-        </script>
+    <script src="js/app.js"></script>
 </head>
 
 <body>
@@ -30,16 +27,16 @@
                 </div>
                 <div class="msg-header">
                     <p>Hola! Soy soy la asistente inteligente de Muller Lewis y te ayudaré a mejorar tu experiencia con nosotros.<br>Gracias por contactarte.<br>¿Dime, cómo te puedo ayudar hoy?</p>
-                    <button type="button" class="btn btn-primary" id="MostrarProductos" onclick="MostrarProductos();">
+                    <button type="button" class="btn btn-primary" id="MostrarProductos" onclick="MostrarProductos();" >
                     Mostrar Productos</button>
                     <br><br>
                     <button type="button" class="btn btn-warning" id="EstatusCompra" onclick="EstatusCompra();">
                     Estatus Compra</button>
                     <br><br>
-                    <button type="button" class="btn btn-info" onclick="AtencionClientes();">
+                    <button type="button" class="btn btn-info" id="AtencionClientes" onclick="AtencionClientes();" >
                     Atencion Clientes</button>
                     <br><br>
-                    <button type="button" class="btn btn-danger" id="CancelarCompra" onclick="CancelarCompra();">
+                    <button type="button" class="btn btn-danger" id="CancelarCompra" onclick="CancelarCompra();" >
                     Cancelar Compra</button>
                 </div>
             </div>
@@ -53,62 +50,8 @@
         </div>
         </form>
     </div>
-
-  <?php
-  $saludo= "hola";
-  ?>
-  
-   <script type="text/javascript">
-    function MostrarProductos(){
-        alert( "<?php echo $saludo; ?>" );
-    }
-       
-    function EstatusCompra(){
-        alert("EstatusCompra");
-    }
-       
-    function AtencionClientes(){
-        alert("AtencionClientes");
-    }
-       
-    function CancelarCompra(){
-        alert("CancelarCompra");
-    }
-   </script>
-   
-   
-   
-    <script>
-        $(document).ready(function(){
-            $("#send-btn").on("click", function(){
-                $value = $("#data").val();
-                $msg = '<div class="user-inbox inbox"><div class="msg-header"><p>'+ $value +'</p></div></div>';
-                $(".form").append($msg);
-                $("#data").val('');
-                
-                // Codigo AJAX
-                $.ajax({
-                    url: 'PHP/conexion.php',
-                    type: 'POST',
-                    data: 'text='+$value,
-                    success: function(result){
-                        $replay = '<div class="bot-inbox inbox"><div class="icon"><img src="imagenes/chat.png" class="imgRedonda2"></div><div class="msg-header"><p>'+ result +'</p></div></div>';
-                        $(".form").append($replay);
-                        //Esto es para que la barra baje al ultimo chat.
-                        $(".form").scrollTop($(".form")[0].scrollHeight);
-                    }
-                });
-            });
-        });
-    </script>
-    <!--Mandar la alerta con el contacto-->
-    <SCRIPT LANGUAGE="JavaScript">
-        function Contactanos () {
-        alert ("Comunicate al numero +52 55-18-47-89 ");
-        }
-        function Reservar(){
-            window.open("https://www.youtube.com/watch?v=h1aoYXl850Y", "_blank ")
-        }
-        </SCRIPT>
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+	
 </body>
 </html>
